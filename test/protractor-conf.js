@@ -16,5 +16,8 @@ exports.config = {
 
   jasmineNodeOpts: {
     defaultTimeoutInterval: 30000
+  },
+  suites : {
+      homePage: ['e2e/homePageTest.js' , 'e2e/homePageObj.js']
   }
 };
