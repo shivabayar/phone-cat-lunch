@@ -18,6 +18,11 @@ exports.config = {
     defaultTimeoutInterval: 30000
   },
   suites : {
-      homePage: ['e2e/homePageTest.js' , 'e2e/homePageObj.js']
-  }
+      homePage: ['e2e/homePageTest.js' , 'e2e/homePageObj.js'],
+      scenes : ['e2e/scenarios.js']
+  },
+  onPrepare: function() {
+       browser.driver.manage().window().maximize();
+   }
+
 };
