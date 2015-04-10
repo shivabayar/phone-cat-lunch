@@ -22,6 +22,16 @@ var homePageObj = function () {
             expect(url.split('#')[1]).toBe(urlToMatch);
         });
     };
+    
+    this.verifySearchResults = function (searchResults) {
+        var phoneNameColumn = element.all(by.repeater('phone in phones')
+                                        .column('phone.name')),
+        items = phoneNameColumn.map(function(elm) {
+                return elm.getText();
+        });
+
+        expect(items).toEqual(searchResults);
+    };
 };
 
 module.exports = new homePageObj();

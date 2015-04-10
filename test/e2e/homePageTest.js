@@ -33,6 +33,13 @@ describe('Home Page', function () {
 
     it('should go to nexus page', function () {
         homeDetailPage.gotoPage('/phones/nexus-s');
+        homeDetailPage.verifyPhoneName('Nexus S');
+        ptor.sleep(2000);
+    });
+
+    it('should verify search results for tablets', function () {
+        homePage.searchBox.sendKeys("tablet");
+        homePage.verifySearchResults(["Motorola XOOM\u2122 with Wi-Fi","MOTOROLA XOOM\u2122"]);
         ptor.sleep(2000);
     });
 });
